@@ -9,13 +9,18 @@
 /* Begin PBXBuildFile section */
 		B6085E8A27A759B00088E3AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6085E8927A759B00088E3AB /* AppDelegate.swift */; };
 		B6085E8C27A759B00088E3AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6085E8B27A759B00088E3AB /* SceneDelegate.swift */; };
-		B6085E8E27A759B00088E3AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6085E8D27A759B00088E3AB /* ViewController.swift */; };
+		B6085E8E27A759B00088E3AB /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6085E8D27A759B00088E3AB /* ShowViewController.swift */; };
 		B6085E9127A759B00088E3AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6085E8F27A759B00088E3AB /* Main.storyboard */; };
 		B6085E9327A759B30088E3AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6085E9227A759B30088E3AB /* Assets.xcassets */; };
 		B6085E9627A759B30088E3AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6085E9427A759B30088E3AB /* LaunchScreen.storyboard */; };
 		B6085EA127A759B40088E3AB /* IOS_Challenge___TV_APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6085EA027A759B40088E3AB /* IOS_Challenge___TV_APITests.swift */; };
 		B6085EAB27A759B40088E3AB /* IOS_Challenge___TV_APIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6085EAA27A759B40088E3AB /* IOS_Challenge___TV_APIUITests.swift */; };
 		B6085EAD27A759B40088E3AB /* IOS_Challenge___TV_APIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6085EAC27A759B40088E3AB /* IOS_Challenge___TV_APIUITestsLaunchTests.swift */; };
+		B6085EBD27A7605B0088E3AB /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6085EBC27A7605B0088E3AB /* Search.swift */; };
+		B6085EBF27A7610B0088E3AB /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6085EBE27A7610B0088E3AB /* Show.swift */; };
+		B6085EC127A768590088E3AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6085EC027A768590088E3AB /* Constants.swift */; };
+		B6085EC327A769270088E3AB /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6085EC227A769270088E3AB /* APIKey.swift */; };
+		B6085EC727A82F840088E3AB /* QueryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6085EC627A82F840088E3AB /* QueryService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +44,7 @@
 		B6085E8627A759B00088E3AB /* IOS Challenge - TV API.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS Challenge - TV API.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6085E8927A759B00088E3AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6085E8B27A759B00088E3AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B6085E8D27A759B00088E3AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B6085E8D27A759B00088E3AB /* ShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
 		B6085E9027A759B00088E3AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B6085E9227A759B30088E3AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6085E9527A759B30088E3AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +54,11 @@
 		B6085EA627A759B40088E3AB /* IOS Challenge - TV APIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IOS Challenge - TV APIUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6085EAA27A759B40088E3AB /* IOS_Challenge___TV_APIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IOS_Challenge___TV_APIUITests.swift"; sourceTree = "<group>"; };
 		B6085EAC27A759B40088E3AB /* IOS_Challenge___TV_APIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IOS_Challenge___TV_APIUITestsLaunchTests.swift"; sourceTree = "<group>"; };
+		B6085EBC27A7605B0088E3AB /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		B6085EBE27A7610B0088E3AB /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
+		B6085EC027A768590088E3AB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B6085EC227A769270088E3AB /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		B6085EC627A82F840088E3AB /* QueryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +109,13 @@
 		B6085E8827A759B00088E3AB /* IOS Challenge - TV API */ = {
 			isa = PBXGroup;
 			children = (
+				B6085EC527A82F740088E3AB /* Networking */,
+				B6085EC427A7692E0088E3AB /* Helper */,
+				B6085EBB27A760300088E3AB /* View */,
+				B6085EBA27A7602B0088E3AB /* Controller */,
+				B6085EB927A760270088E3AB /* Model */,
 				B6085E8927A759B00088E3AB /* AppDelegate.swift */,
 				B6085E8B27A759B00088E3AB /* SceneDelegate.swift */,
-				B6085E8D27A759B00088E3AB /* ViewController.swift */,
-				B6085E8F27A759B00088E3AB /* Main.storyboard */,
-				B6085E9227A759B30088E3AB /* Assets.xcassets */,
-				B6085E9427A759B30088E3AB /* LaunchScreen.storyboard */,
 				B6085E9727A759B30088E3AB /* Info.plist */,
 			);
 			path = "IOS Challenge - TV API";
@@ -125,6 +136,50 @@
 				B6085EAC27A759B40088E3AB /* IOS_Challenge___TV_APIUITestsLaunchTests.swift */,
 			);
 			path = "IOS Challenge - TV APIUITests";
+			sourceTree = "<group>";
+		};
+		B6085EB927A760270088E3AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B6085EBC27A7605B0088E3AB /* Search.swift */,
+				B6085EBE27A7610B0088E3AB /* Show.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B6085EBA27A7602B0088E3AB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B6085E8D27A759B00088E3AB /* ShowViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B6085EBB27A760300088E3AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B6085E8F27A759B00088E3AB /* Main.storyboard */,
+				B6085E9427A759B30088E3AB /* LaunchScreen.storyboard */,
+				B6085E9227A759B30088E3AB /* Assets.xcassets */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B6085EC427A7692E0088E3AB /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B6085EC027A768590088E3AB /* Constants.swift */,
+				B6085EC227A769270088E3AB /* APIKey.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		B6085EC527A82F740088E3AB /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B6085EC627A82F840088E3AB /* QueryService.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +313,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6085E8E27A759B00088E3AB /* ViewController.swift in Sources */,
+				B6085E8E27A759B00088E3AB /* ShowViewController.swift in Sources */,
+				B6085EC327A769270088E3AB /* APIKey.swift in Sources */,
+				B6085EBD27A7605B0088E3AB /* Search.swift in Sources */,
 				B6085E8A27A759B00088E3AB /* AppDelegate.swift in Sources */,
+				B6085EC727A82F840088E3AB /* QueryService.swift in Sources */,
 				B6085E8C27A759B00088E3AB /* SceneDelegate.swift in Sources */,
+				B6085EBF27A7610B0088E3AB /* Show.swift in Sources */,
+				B6085EC127A768590088E3AB /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
