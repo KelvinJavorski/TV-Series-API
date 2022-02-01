@@ -7,9 +7,12 @@
 
 import UIKit
 
-class ShowViewController: UIViewController {
+class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+ 
+    
     
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var searchTableView: UITableView!
     
     var shows = [Show]()
 
@@ -26,6 +29,7 @@ class ShowViewController: UIViewController {
                 for found in search {
                     self.shows.append(found.show)
                 }
+                self.searchTableView.reloadData()
             } else {
                 print("Decode error")
             }
@@ -37,7 +41,6 @@ class ShowViewController: UIViewController {
     }
     
     @IBAction func searchButtonTouched(_ sender: UIButton){
-//        dismissKeyboard()
         guard let text = nameTextField.text,
               text.trimmingCharacters(in: .whitespacesAndNewlines) != "" else { return }
         let name = text.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -47,9 +50,45 @@ class ShowViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        searchTableView.delegate = self
+        searchTableView.dataSource = self
     }
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return shows.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "searchTableViewCell", for: indexPath) as! SearchTableViewCell
+        let currentShow = shows[indexPath.row]
+        
+        cell.showTitle.text = currentShow.name
+        
+        if let image = currentShow.image {
+            cell.showImage.load(url: image.medium)
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let selectedRow = shows[indexPath.row]
+        performSegue(withIdentifier: "showSegue", sender: nil)
+    
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let selectedPath = searchTableView.indexPathForSelectedRow else { return }
+        if let target = segue.destination as? ShowViewController {
+            target.selectedShow = shows[selectedPath.row]
+        }
+        
+    }
 
 }
 
