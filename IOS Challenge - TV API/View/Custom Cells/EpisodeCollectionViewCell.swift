@@ -11,6 +11,5 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var episodeName: UILabel!
     @IBOutlet weak var episodeNumber: UILabel!
     @IBOutlet weak var episodeImage: UIImageView!
-    @IBOutlet weak var episodeSeason: UILabel!
-    
+    @IBOutlet weak var squareView: UIView!
 }

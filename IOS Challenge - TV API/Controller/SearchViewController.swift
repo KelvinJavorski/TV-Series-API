@@ -7,54 +7,49 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
- 
+class SearchViewController: UIViewController {
     
-    
-    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var searchTableView: UITableView!
     
+    var searchWord : String?
     var shows = [Show]()
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        searchTableView.delegate = self
+        searchTableView.dataSource = self
+        if let searchWord = searchWord {
+            searchShows(named: searchWord)
+        }
+    }
+    
     func searchShows(named name: String){
         let queryStr = formatToQueryString(name)
         let fullURL = "\(ENDPOINT)search/shows?q=\(queryStr)"
         
-
         DispatchQueue.main.async {
             guard let url = URL(string: fullURL),
             let data = try? Data(contentsOf: url) else { return }
 
             if let search = try? JSONDecoder().decode([Search].self, from: data) {
+                self.shows.removeAll()
                 for found in search {
                     self.shows.append(found.show)
                 }
-                self.searchTableView.reloadData()
             } else {
                 print("Decode error")
             }
+            self.searchTableView.reloadData()
         }
     }
     
     func formatToQueryString(_ string: String) -> String {
         return string.components(separatedBy: " ").joined(separator: "%20")
     }
-    
-    @IBAction func searchButtonTouched(_ sender: UIButton){
-        guard let text = nameTextField.text,
-              text.trimmingCharacters(in: .whitespacesAndNewlines) != "" else { return }
-        let name = text.trimmingCharacters(in: .whitespacesAndNewlines)
-        
-        searchShows(named: name)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        searchTableView.delegate = self
-        searchTableView.dataSource = self
-    }
+}
 
+extension SearchViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return shows.count
     }
@@ -77,9 +72,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let selectedRow = shows[indexPath.row]
         performSegue(withIdentifier: "showSegue", sender: nil)
-    
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -89,6 +82,5 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
     }
-
 }
 
